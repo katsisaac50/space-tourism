@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import { Inter } from 'next/font/google'
+import { Inter } from 'next/font/google';
+import Image from 'next/image';
+import HorizontalLine from '../components/HorizontalLine';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,7 +12,15 @@ export const metadata = {
 
 function RootLayout({ children }) {
   return (
-    <>
+    <div><div className="top-left-image">
+    <Image
+      src="../assets/shared/logo.svg"
+      width={30}
+      height={30}
+      alt="Picture of the author"
+    />
+  </div>
+  <HorizontalLine />
         <nav>
           <ul>
             <li>
@@ -23,7 +33,7 @@ function RootLayout({ children }) {
           </ul>
         </nav>
         {children}
-      </>
+      </div>
   );
 }
 

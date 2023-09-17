@@ -1,7 +1,8 @@
 function HomePage() {
   return (
   
-      <div className="home-background">Home Page Content</div>
+      <div className="home-background">
+      Home Page Content</div>
 
   );
 }

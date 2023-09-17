@@ -4,6 +4,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); 
 
+.top-left-image {
+  position: absolute;
+  top: 1cm;
+  left: 1cm;
+}
+
 .home-background {
   background-image: url('../public/assets/home/background-home-desktop.jpg');
   background-size: cover;
@@ -19,11 +25,11 @@
 }
 
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -33,7 +39,7 @@
   }
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -41,4 +47,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */

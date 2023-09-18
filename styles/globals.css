@@ -9,19 +9,25 @@
   top: 1cm;
   left: 1cm;
 }
+.right-nav {
+  margin-left: 39rem;
+  margin-top:1rem;
+}
+.ul-nav {
+  margin-left: 1rem;
+}
 
 .home-background {
   background-image: url('../public/assets/home/background-home-desktop.jpg');
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed; /* Optional: This ensures the image remains fixed while scrolling */
-  position: fixed; /* Ensures the background covers the entire viewport */
+  background-attachment: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Optional: Set this to control the z-index of the background */
-  /* filter: blur(5px); */
+  z-index: -1; 
 }
 
 

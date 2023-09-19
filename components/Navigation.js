@@ -28,9 +28,9 @@ const Navigation = () => {
           <li key={index}>
             <Link href={item.link}>
               <div
-              className={`text-white  transition duration-300 ${hoverClassName} ${selectedClassName} ${isCurrentPage ? '' : 'hover:border-b-2'}`}
+              className={`text-white space-x-3 transition duration-300 ${hoverClassName} ${selectedClassName} ${isCurrentPage ? '' : 'hover:border-b-2'}`}
               >
-              <span className="font-normal font-bold">{figure}</span> {rest}
+              <span className="font-bold">{figure}</span> <span className='font-mono'>{rest}</span>
               </div>
             </Link>
           </li>

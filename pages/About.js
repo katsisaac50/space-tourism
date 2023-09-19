@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import marsImage from '../public/assets/destination/image-mars.png';
 import { useRouter } from 'next/router';
@@ -14,6 +14,12 @@ function About() {
     { text: 'Titan', link: '/ie' },
   ];
 
+  const [selectedPlanet, setSelectedPlanet] = useState(null);
+
+  const handlePlanetSelect = (item) => {
+    setSelectedPlanet(item);
+  };
+
   return (
     <div className="mars">
       <div className="container mx-auto flex mt-40">
@@ -28,7 +34,7 @@ function About() {
       alt="Picture of the author"
     /></div>
         </section>
-        <div className="text-white flex items-center justify-center flex-grow ml-96 pl-20 mt-32">
+        <div className="text-white items-center justify-center flex-grow ml-96 pl-20 mt-32">
         <ul className='flex space-x-4'>
         {planetItems.map((item, index) => {
           const isCurrentPage = router.pathname === item.link;
@@ -37,28 +43,24 @@ function About() {
 
           return (
           <li key={index}>
-            <Link href={item.link}>
+            
               <div
-              className={`text-white space-x-3 transition duration-300 ${hoverClassName} ${selectedClassName} ${isCurrentPage ? '' : 'hover:border-b-2'}`}
+                className={`text-white space-x-3 hover:cursor-pointer transition duration-300 ${hoverClassName} ${selectedClassName} ${isCurrentPage ? '' : 'hover:border-b-2'}`}
+                onClick={() => handlePlanetSelect(item)}
               >
               <span className="font-bold">{item.text}</span> 
               </div>
-            </Link>
+          
           </li>
         )})}
         </ul>
         
-        <p>Mars1</p>
-      
-        Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
-        the tallest planetary mountain in our solar system. It’s two and a half times 
-        the size of Everest!
-      
-        Avg. distance
-        225 mil. km
-      
-        Est. travel time
-        9 months
+        {selectedPlanet && (
+          <div className='text-9xl font-serif'>
+            {selectedPlanet.text} {/* Render the selected planet's text */}
+            {/* Add other details for the selected planet here */}
+          </div>
+        )}
         </div>
       </div>
     </div>

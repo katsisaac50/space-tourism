@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import marsImage from '../public/assets/destination/image-mars.png';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
+import HorizontalLine from '@/components/HorizontalLine';
+
 
 function About() {
   const router = useRouter();
@@ -27,15 +28,16 @@ function About() {
           className="text-justify text-white w-[26rem] h-[20rem] flex-shrink-0"
         >
         <p className='uppercase font-serif text-2xl tracking-widest pb-24'><span className='font-bold font-mono text-gray-600'>01 </span>Pick your destination</p>
-        <div className='ml-20'><Image
+        <div className='ml-20'>
+        <Image
       src={marsImage}
       width={500}
       height={500}
       alt="Picture of the author"
     /></div>
         </section>
-        <div className="text-white items-center justify-center flex-grow ml-96 pl-20 mt-32">
-        <ul className='flex space-x-4 pb-8'>
+        <div className="text-white items-center justify-center flex-grow ml-96 pl-20 mt-28">
+        <ul className='flex space-x-4 pb-6'>
         {planetItems.map((item, index) => {
           const isCurrentPage = router.pathname === item.link;
           const hoverClassName = isCurrentPage ? 'hover:text-yellow-300' : 'hover:text-white';
@@ -57,15 +59,18 @@ function About() {
         
         {selectedPlanet && (
           <div >
-            <span className='text-9xl font-serif'>{selectedPlanet.text}</span> {/* Render the selected planet's text */}
-            <p className='pt-12 font-mono'>Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
+            <span className='text-8xl font-serif'>{selectedPlanet.text}</span> {/* Render the selected planet's text */}
+            <p className='pt-6 font-mono'>Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
             the tallest planetary mountain in our solar system. It’s two and a half times 
             the size of Everest!</p>
             {/* Add other details for the selected planet here */}
+            <hr class="h-px my-8 border-1 dark:bg-gray-800"></hr>
           </div>
         )}
         </div>
+        
       </div>
+      
     </div>
   );
 }

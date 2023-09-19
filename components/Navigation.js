@@ -16,15 +16,21 @@ const Navigation = () => {
       <ul className="flex space-x-4 pr-8 ml-80">
         {navigationItems.map((item, index) => {
           const isCurrentPage = router.pathname === item.link;
-          const hoverClassName = isCurrentPage ? 'hover:text-yellow-300 hover:border-b-2' : 'hover:text-white';
+          const hoverClassName = isCurrentPage ? 'hover:text-yellow-300' : 'hover:text-white';
+          const selectedClassName = isCurrentPage ? 'border-b-2 border-yellow-300' : '';
+
+          // Split the text into two parts: figure and the rest
+          const parts = item.text.split(' ');
+          const figure = parts[0];
+          const rest = parts.slice(1).join(' ');
 
           return (
           <li key={index}>
             <Link href={item.link}>
               <div
-              className={`text-white font-bold transition duration-300 ${hoverClassName}`}
+              className={`text-white  transition duration-300 ${hoverClassName} ${selectedClassName} ${isCurrentPage ? '' : 'hover:border-b-2'}`}
               >
-                {item.text}
+              <span className="font-normal font-bold">{figure}</span> {rest}
               </div>
             </Link>
           </li>

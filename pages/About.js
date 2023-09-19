@@ -1,26 +1,17 @@
 import React from 'react';
 import Image from 'next/image';
 import marsImage from '../public/assets/destination/image-mars.png';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 function About() {
-  const projects = [
-    {
-      title: 'Project 1',
-      category: 'Category 1',
-      url: '/project1',
-      users: [
-        { name: 'User 1', avatar: 'user1.jpg' },
-        { name: 'User 2', avatar: 'user2.jpg' },
-      ],
-    },
-    // Add more projects as needed
-  ];
-
+  const router = useRouter();
+  
   const planetItems = [
-    { text: '00 Home', link: '/' },
-    { text: '01 Destination', link: '/About' },
-    { text: '02 Crew', link: '/About' },
-    { text: '03 Technology', link: '/About' },
+    { text: 'Moon', link: '/' },
+    { text: 'Mars', link: '/hel' },
+    { text: 'Europa', link: '/lk' },
+    { text: 'Titan', link: '/ie' },
   ];
 
   return (
@@ -38,15 +29,26 @@ function About() {
     /></div>
         </section>
         <div className="text-white flex items-center justify-center flex-grow ml-96 pl-20 mt-32">
-        <ul> 
-        <li>Moon</li>
-        <li>Mars</li>
-        <li>Europa</li>
-        <li>Titan</li>
+        <ul className='flex space-x-4'>
+        {planetItems.map((item, index) => {
+          const isCurrentPage = router.pathname === item.link;
+          const hoverClassName = isCurrentPage ? 'hover:text-yellow-300' : 'hover:text-white';
+          const selectedClassName = isCurrentPage ? 'border-b-2 border-yellow-300' : '';
+
+          return (
+          <li key={index}>
+            <Link href={item.link}>
+              <div
+              className={`text-white space-x-3 transition duration-300 ${hoverClassName} ${selectedClassName} ${isCurrentPage ? '' : 'hover:border-b-2'}`}
+              >
+              <span className="font-bold">{item.text}</span> 
+              </div>
+            </Link>
+          </li>
+        )})}
         </ul>
         
-      
-        Mars
+        <p>Mars1</p>
       
         Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
         the tallest planetary mountain in our solar system. It’s two and a half times 

@@ -22,9 +22,7 @@ const Navigation = () => {
           <li key={index}>
             <Link href={item.link}>
               <div
-                className={`text-white font-bold hover:text-yellow-300 ${
-                  router.pathname === item.link ? 'border-b-2' : ''
-                }`}
+              className={`text-white font-bold transition duration-300 ${hoverClassName}`}
               >
                 {item.text}
               </div>

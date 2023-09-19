@@ -35,7 +35,7 @@ function About() {
     /></div>
         </section>
         <div className="text-white items-center justify-center flex-grow ml-96 pl-20 mt-32">
-        <ul className='flex space-x-4'>
+        <ul className='flex space-x-4 pb-8'>
         {planetItems.map((item, index) => {
           const isCurrentPage = router.pathname === item.link;
           const hoverClassName = isCurrentPage ? 'hover:text-yellow-300' : 'hover:text-white';
@@ -56,8 +56,11 @@ function About() {
         </ul>
         
         {selectedPlanet && (
-          <div className='text-9xl font-serif'>
-            {selectedPlanet.text} {/* Render the selected planet's text */}
+          <div >
+            <span className='text-9xl font-serif'>{selectedPlanet.text}</span> {/* Render the selected planet's text */}
+            <p className='pt-12 font-mono'>Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
+            the tallest planetary mountain in our solar system. It’s two and a half times 
+            the size of Everest!</p>
             {/* Add other details for the selected planet here */}
           </div>
         )}

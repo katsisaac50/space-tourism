@@ -1,23 +1,18 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import marsImage from '../public/assets/destination/image-mars.png';
-import { useRouter } from 'next/router';
 
 function About() {
-  const router = useRouter();
-
   const planetItems = [
-    { text: 'Moon', image: '../public/assets/destination/image-moon.png' },
-    { text: 'Mars', image: '../public/assets/destination/image-mars.png' },
-    { text: 'Europa', image: '../public/assets/destination/image-europa.png' },
-    { text: 'Titan', image: '../public/assets/destination/image-titan.png' },
+    { text: 'Moon', image: '/assets/destination/image-moon.png' },
+    { text: 'Mars', image: '/assets/destination/image-mars.png' },
+    { text: 'Europa', image: '/assets/destination/image-europa.png' },
+    { text: 'Titan', image: '/assets/destination/image-titan.png' },
   ];
 
   const [selectedPlanetIndex, setSelectedPlanetIndex] = useState(0);
 
-  const handlePlanetSelect = (item, index) => {
+  const handlePlanetSelect = (index) => {
     setSelectedPlanetIndex(index);
-    router.push(item.link); // Navigate to the selected planet's link
   };
 
   return (
@@ -30,7 +25,7 @@ function About() {
           </p>
           <div className="ml-20">
             <Image
-              src={marsImage}
+              src={planetItems[selectedPlanetIndex].image}
               width={500}
               height={500}
               alt="Picture of the author"
@@ -40,10 +35,10 @@ function About() {
         <div className="text-white items-center justify-center flex-grow ml-96 pl-20 mt-28">
           <ul className="flex space-x-4 pb-6">
             {planetItems.map((item, index) => {
-              const isCurrentPage = router.pathname === item.link;
-              const hoverClassName = isCurrentPage
-                ? 'hover:text-yellow-300 hover:border-b-2 border-yellow-300'
-                : 'hover:text-white hover:border-b-2';
+              const hoverClassName =
+                selectedPlanetIndex === index
+                  ? 'hover:text-yellow-300 hover:border-b-2 border-yellow-300'
+                  : 'hover:text-white hover:border-b-2';
               const selectedClassName =
                 selectedPlanetIndex === index ? 'border-b-2 border-yellow-300' : '';
 
@@ -51,7 +46,7 @@ function About() {
                 <li key={index}>
                   <div
                     className={`text-white space-x-3 hover:cursor-pointer transition duration-300 ${hoverClassName} ${selectedClassName}`}
-                    onClick={() => handlePlanetSelect(item, index)}
+                    onClick={() => handlePlanetSelect(index)}
                   >
                     <span className="font-bold">{item.text}</span>
                   </div>

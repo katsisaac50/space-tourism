@@ -9,10 +9,7 @@
   top: 1cm;
   left: 1cm;
 }
-.right-nav {
-  margin-left: 38rem;
-  margin-top:1rem;
-}
+
 .ul-nav {
   margin-left: 1rem;
 }
@@ -21,7 +18,7 @@
   background-image: url('../public/assets/home/background-home-desktop.jpg');
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed; 
+  background-attachment: scroll; 
   position: fixed;
   top: 0;
   left: 0;
@@ -34,7 +31,7 @@
   background-image: url('../public/assets/destination/background-destination-desktop.jpg');
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed; 
+  background-attachment: scroll;
   position: fixed;
   top: 0;
   left: 0;

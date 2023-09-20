@@ -14,7 +14,7 @@ function HomePage() {
 
   return (
     <div className="home-background">
-      <div className="container mx-auto flex mt-60">
+      <div className="container mx-auto flex mt-64">
         <section
           className="text-justify text-white w-[26rem] h-[20rem] flex-shrink-0"
         >

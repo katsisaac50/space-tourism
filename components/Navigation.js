@@ -12,7 +12,7 @@ const Navigation = () => {
   const router = useRouter();
 
   return (
-    <nav className="backdrop-blur-sm bg-gray-900/25 absolute z-20 py-6 right-0 left-90">
+    <nav className="backdrop-blur-sm bg-gray-900/25 absolute py-6 right-0 left-90 mt-4">
       <div className="container mx-auto">
         <ul className="flex space-x-12 px-44 ml-75">
           {navigationItems.map((item, index) => {

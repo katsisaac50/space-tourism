@@ -22,19 +22,22 @@ function RootLayout({ children }) {
           alt="Picture of the author"
         />
       </div>
-      <div className="w-full relative flex">
+      <div className="w-full relative">
         <div className="absolute inset-0 z-10">
           <HorizontalLine />
         </div>
-        <div className="ml-auto flex-grow"> 
-          <Navigation />
+        <div className="flex">
+          <div className="ml-auto"> 
+            <Navigation />
+          </div>
+          <div className="ml-auto flex-grow"> 
+            {children}
+          </div>
         </div>
-      </div>
-      <div className="ml-auto"> 
-        {children}
       </div>
     </div>
   );
 }
 
 export default RootLayout;
+

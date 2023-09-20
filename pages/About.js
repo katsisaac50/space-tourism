@@ -22,7 +22,7 @@ function About() {
   };
 
   return (
-    <div className="mars">
+    <div className="mars ">
       <div className="container mx-auto flex mt-40">
         <section
           className="text-justify text-white w-[26rem] h-[20rem] flex-shrink-0"
@@ -65,6 +65,20 @@ function About() {
             the size of Everest!</p>
             {/* Add other details for the selected planet here */}
             <hr class="h-px my-8 border-1 dark:bg-gray-800"></hr>
+            <div className='flex justify-between uppercase'>
+            <div >
+            <span className='font-mono text-sm '>Avg. distance</span>
+            <br/>
+            <span className='font-serif text-3xl'>225 mil. km</span>
+            </div>
+            <div>
+            <span className='font-mono text-sm'>Est. travel time</span>
+            <br/>
+            <span className='font-serif text-3xl'>9 months</span>
+            </div>
+            
+            </div>
+            
           </div>
         )}
         </div>

@@ -1,39 +1,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import planetItems from "../lib/data/planetItem.json"
 
 function About() {
-  const planetItems = [
-    {
-      text: 'Moon',
-      image: '/assets/destination/image-moon.png',
-      details: `See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.`,
-      'Est. travel time': '3 days',
-      'Avg. distance': '384,400 km',
-    },
-    {
-      text: 'Mars',
-      image: '/assets/destination/image-mars.png',
-      details: `Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!`,
-      'Est. travel time': '9 months',
-      'Avg. distance': '225 mil. km',
-    },
-    {
-      text: 'Europa',
-      image: '/assets/destination/image-europa.png',
-      details: `The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.`,
-      'Est. travel time': '3 years',
-      'Avg. distance': '628 MIL km',
-    },
-    {
-      text: 'Titan',
-      image: '/assets/destination/image-titan.png',
-      details: `The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.`,
-      'Est. travel time': '7 years',
-      'Avg. distance': '1.6 bil. km',
-    },
-  ];
   
-
   const [selectedPlanetIndex, setSelectedPlanetIndex] = useState(0);
 
   const handlePlanetSelect = (index) => {
@@ -73,7 +43,7 @@ function About() {
                     className={`text-white space-x-3 hover:cursor-pointer transition duration-300 ${hoverClassName} ${selectedClassName}`}
                     onClick={() => handlePlanetSelect(index)}
                   >
-                    <span className="font-bold">{item.text}</span>
+                    <span className="font-bold">{item.planet}</span>
                   </div>
                 </li>
               );
@@ -83,7 +53,7 @@ function About() {
           {selectedPlanetIndex !== null && (
             <div>
               <span className="text-8xl font-serif">
-                {planetItems[selectedPlanetIndex].text}
+                {planetItems[selectedPlanetIndex].planet}
               </span>
               <p className="pt-6 font-mono">
                 {planetItems[selectedPlanetIndex].details}

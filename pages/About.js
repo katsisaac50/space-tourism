@@ -15,7 +15,7 @@ function About() {
     { text: 'Titan', link: '/ie' },
   ];
 
-  const [selectedPlanet, setSelectedPlanet] = useState(null);
+  const [selectedPlanet, setSelectedPlanet] = useState(planetItems[0]);
 
   const handlePlanetSelect = (item) => {
     setSelectedPlanet(item);

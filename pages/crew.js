@@ -53,11 +53,11 @@ function Crew() {
 
           {selectedPlanetIndex !== null && (
             <div>
-              <span className="text-8xl font-serif"> Anousheh Ansari 
-                {planetItems[selectedPlanetIndex].planet}
+              <span className="text-8xl font-serif"> 
+                {crewImages[selectedPlanetIndex].name}
               </span>
               <p className="pt-6 font-mono">
-                {planetItems[selectedPlanetIndex].details}
+                {crewImages[selectedPlanetIndex].details}
               </p>
               <hr className="h-px my-8 border-1 dark:bg-gray-800"></hr>
               <div className="flex justify-between uppercase">

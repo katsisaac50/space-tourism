@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import planetItems from "../lib/data/planetItem.json";
-import crewImages from '@/lib/data/crewImages';
+import crewImages from '@/lib/data/crewImages.json';
+import image from '../public/assets/destination/image-mars.png';
 
 function Crew() {
   console.log(crewImages)
@@ -12,12 +13,22 @@ function Crew() {
     setSelectedPlanetIndex(index);
   };
 
+  const selectedImage = crewImages[selectedPlanetIndex];
+                const imageUrl = `/public/assets/crew/${selectedImage}`;
+
+                console.log(imageUrl)
+
   return (
     <div className="crew">
       <div className="container mx-auto flex mt-40">
       <div className="text-white items-center justify-center flex-grow ml-10 pl-10 mt-28">
+      <p className="uppercase font-serif text-2xl tracking-widest pb-24">
+      <span className="font-bold font-mono text-gray-600">01 </span>
+      Meet your crew
+    </p>
           <ul className="flex space-x-4 pb-6">
-            {planetItems.map((item, index) => {
+            {crewImages.map((item, index) => {
+              console.log(index);
               const hoverClassName =
                 selectedPlanetIndex === index
                   ? 'hover:text-yellow-300 hover:border-b-2 border-yellow-300'
@@ -25,13 +36,15 @@ function Crew() {
               const selectedClassName =
                 selectedPlanetIndex === index ? 'border-b-2 border-yellow-300' : '';
 
+                
+
               return (
                 <li key={index}>
                   <div
                     className={`text-white space-x-3 hover:cursor-pointer transition duration-300 ${hoverClassName} ${selectedClassName}`}
                     onClick={() => handlePlanetSelect(index)}
                   >
-                    <span className="font-bold">{item.planet}</span>
+                    <span className="font-bold">{item.name}</span>
                   </div>
                 </li>
               );
@@ -67,13 +80,9 @@ function Crew() {
           )}
         </div>
         <section className="text-justify text-white w-[26rem] h-[20rem] flex-shrink-0">
-          <p className="uppercase font-serif text-2xl tracking-widest pb-24">
-            <span className="font-bold font-mono text-gray-600">01 </span>
-            Meet your crew
-          </p>
           <div className="ml-20">
             <Image
-              src={planetItems[selectedPlanetIndex].image}
+              src={crewImages[selectedPlanetIndex].image}
               width={500}
               height={500}
               alt="Picture of the author"

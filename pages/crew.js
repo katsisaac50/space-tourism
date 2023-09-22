@@ -54,7 +54,7 @@ function Crew() {
 
           {selectedPlanetIndex !== null && (
             <div>
-              <span className="text-8xl font-serif">
+              <span className="text-8xl font-serif"> Anousheh Ansari 
                 {planetItems[selectedPlanetIndex].planet}
               </span>
               <p className="pt-6 font-mono">

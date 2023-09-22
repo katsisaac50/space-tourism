@@ -63,7 +63,7 @@ function Crew() {
               <hr className="h-px my-8 border-1 dark:bg-gray-800"></hr>
               <div className="flex justify-between uppercase">
                 <div>
-                  <span className="font-mono text-sm">Avg. distance</span>
+                  <span className="font-mono text-sm">Flight Engineer</span>
                   <br />
                   <span className="font-serif text-3xl">
                     {planetItems[selectedPlanetIndex]['Avg. distance']}

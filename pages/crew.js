@@ -15,21 +15,7 @@ function Crew() {
   return (
     <div className="crew">
       <div className="container mx-auto flex mt-40">
-        <section className="text-justify text-white w-[26rem] h-[20rem] flex-shrink-0">
-          <p className="uppercase font-serif text-2xl tracking-widest pb-24">
-            <span className="font-bold font-mono text-gray-600">01 </span>
-            Meet your crew
-          </p>
-          <div className="ml-20">
-            <Image
-              src={planetItems[selectedPlanetIndex].image}
-              width={500}
-              height={500}
-              alt="Picture of the author"
-            />
-          </div>
-        </section>
-        <div className="text-white items-center justify-center flex-grow ml-80 pl-10 mt-28">
+      <div className="text-white items-center justify-center flex-grow ml-10 pl-10 mt-28">
           <ul className="flex space-x-4 pb-6">
             {planetItems.map((item, index) => {
               const hoverClassName =
@@ -80,6 +66,20 @@ function Crew() {
             </div>
           )}
         </div>
+        <section className="text-justify text-white w-[26rem] h-[20rem] flex-shrink-0">
+          <p className="uppercase font-serif text-2xl tracking-widest pb-24">
+            <span className="font-bold font-mono text-gray-600">01 </span>
+            Meet your crew
+          </p>
+          <div className="ml-20">
+            <Image
+              src={planetItems[selectedPlanetIndex].image}
+              width={500}
+              height={500}
+              alt="Picture of the author"
+            />
+          </div>
+        </section>
       </div>
     </div>
   );

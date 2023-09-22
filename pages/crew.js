@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import planetItems from "../lib/data/planetItem.json"
+import planetItems from "../lib/data/planetItem.json";
+import crewImages from '@/lib/data/crewImages';
 
-function About() {
+function Crew() {
+  console.log(crewImages)
   
   const [selectedPlanetIndex, setSelectedPlanetIndex] = useState(0);
 
@@ -11,12 +13,12 @@ function About() {
   };
 
   return (
-    <div className="mars">
+    <div className="crew">
       <div className="container mx-auto flex mt-40">
         <section className="text-justify text-white w-[26rem] h-[20rem] flex-shrink-0">
           <p className="uppercase font-serif text-2xl tracking-widest pb-24">
             <span className="font-bold font-mono text-gray-600">01 </span>
-            Pick your destination
+            Meet your crew
           </p>
           <div className="ml-20">
             <Image
@@ -68,7 +70,7 @@ function About() {
                   </span>
                 </div>
                 <div>
-                  <span className="font-mono text-sm">Est. travel time</span>
+                  <span className="font-mono text-sm">crew is here</span>
                   <br />
                   <span className="font-serif text-3xl">
                     {planetItems[selectedPlanetIndex]['Est. travel time']}
@@ -83,4 +85,4 @@ function About() {
   );
 }
 
-export default About;
+export default Crew;

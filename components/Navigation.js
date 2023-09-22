@@ -3,9 +3,9 @@ import { useRouter } from 'next/router';
 
 const navigationItems = [
   { text: '00 Home', link: '/' },
-  { text: '01 Destination', link: '/About' },
-  { text: '02 Crew', link: '/About' },
-  { text: '03 Technology', link: '/About' },
+  { text: '01 Destination', link: '/destination' },
+  { text: '02 Crew', link: '/crew' },
+  { text: '03 Technology', link: '/technology' },
 ];
 
 const Navigation = () => {

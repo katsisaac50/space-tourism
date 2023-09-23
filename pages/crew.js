@@ -43,10 +43,10 @@ function Crew() {
                 console.log(index);
                 const hoverClassName =
                   selectedPlanetIndex === index
-                    ? 'hover:text-blue-700'
-                    : 'hover:text-red-700 hover:border-b-2';
+                    ? 'hover:text-green-700'
+                    : 'hover:text-red-700';
                 const selectedClassName =
-                  selectedPlanetIndex === index ? 'border-b-2' : '';
+                  selectedPlanetIndex === index ? 'text-blue-700' : '';
   
                   
   
@@ -56,7 +56,7 @@ function Crew() {
                       className={`text-white space-x-3 hover:cursor-pointer transition duration-300 ${hoverClassName} ${selectedClassName}`}
                       onClick={() => handlePlanetSelect(index)}
                     >
-                    <label for="carousel-3" className= {`carousel-bullet cursor-pointer block text-4xl text-white  ${hoverClassName} ${selectedClassName}`}>•</label>
+                    <label className= {`carousel-bullet cursor-pointer block text-4xl text-white  ${hoverClassName} ${selectedClassName}`}>•</label>
                     </div>
                   </li>
                 );

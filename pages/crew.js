@@ -20,8 +20,8 @@ function Crew() {
 
   return (
     <div className="crew">
-      <div className="container mx-auto flex mt-40">
-      <div className="text-white items-center justify-center flex-grow ml-10 pl-10 mt-28">
+      <div className="container mx-auto flex mt-36">
+      <div className="text-white items-center justify-center flex-grow ml-10 pl-10 mt-20">
       <p className="uppercase font-serif text-2xl tracking-widest pb-24">
       <span className="font-bold font-mono text-gray-600">01 </span>
       Meet your crew
@@ -29,8 +29,8 @@ function Crew() {
           
           {selectedPlanetIndex !== null && (
             <div>
-            <h3>{crewImages[selectedPlanetIndex].expertise}</h3>
-              <span className="text-8xl font-serif"> 
+            <h3 className="pt-3.5 font-serif text-3xl font-bold uppercase">{crewImages[selectedPlanetIndex].expertise}</h3>
+              <span className="text-6xl font-serif"> 
                 {crewImages[selectedPlanetIndex].name}
               </span>
               <p className="pt-6 font-mono">
@@ -56,7 +56,7 @@ function Crew() {
                       className={`text-white space-x-3 hover:cursor-pointer transition duration-300 ${hoverClassName} ${selectedClassName}`}
                       onClick={() => handlePlanetSelect(index)}
                     >
-                    <label className= {`carousel-bullet cursor-pointer block text-4xl text-white  ${hoverClassName} ${selectedClassName}`}>•</label>
+                    <label className= {`carousel-bullet cursor-pointer block text-white text-6xl ${hoverClassName} ${selectedClassName}`}>•</label>
                     </div>
                   </li>
                 );

@@ -26,33 +26,10 @@ function Crew() {
       <span className="font-bold font-mono text-gray-600">01 </span>
       Meet your crew
     </p>
-          <ul className="flex space-x-4 pb-6">
-            {crewImages.map((item, index) => {
-              console.log(index);
-              const hoverClassName =
-                selectedPlanetIndex === index
-                  ? 'hover:text-yellow-300 hover:border-b-2 border-yellow-300'
-                  : 'hover:text-white hover:border-b-2';
-              const selectedClassName =
-                selectedPlanetIndex === index ? 'border-b-2 border-yellow-300' : '';
-
-                
-
-              return (
-                <li key={index}>
-                  <div
-                    className={`text-white space-x-3 hover:cursor-pointer transition duration-300 ${hoverClassName} ${selectedClassName}`}
-                    onClick={() => handlePlanetSelect(index)}
-                  >
-                    <span className="font-bold">{item.name}</span>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-
+          
           {selectedPlanetIndex !== null && (
             <div>
+            <h3>{crewImages[selectedPlanetIndex].expertise}</h3>
               <span className="text-8xl font-serif"> 
                 {crewImages[selectedPlanetIndex].name}
               </span>
@@ -60,21 +37,31 @@ function Crew() {
                 {crewImages[selectedPlanetIndex].details}
               </p>
               <hr className="h-px my-8 border-1 dark:bg-gray-800"></hr>
-              <div className="flex justify-between uppercase">
-                <div>
-                  <span className="font-mono text-sm">Flight Engineer</span>
-                  <br />
-                  <span className="font-serif text-3xl">
-                    {planetItems[selectedPlanetIndex]['Avg. distance']}
-                  </span>
-                </div>
-                <div>
-                  <span className="font-mono text-sm">crew is here</span>
-                  <br />
-                  <span className="font-serif text-3xl">
-                    {planetItems[selectedPlanetIndex]['Est. travel time']}
-                  </span>
-                </div>
+              <div className="radio-button-group">
+              <ul className="flex space-x-4 pb-6">
+              {crewImages.map((item, index) => {
+                console.log(index);
+                const hoverClassName =
+                  selectedPlanetIndex === index
+                    ? 'hover:text-yellow-300 hover:border-b-2 border-yellow-300'
+                    : 'hover:text-white hover:border-b-2';
+                const selectedClassName =
+                  selectedPlanetIndex === index ? 'border-b-2 border-yellow-300' : '';
+  
+                  
+  
+                return (
+                  <li key={index}>
+                    <div
+                      className={`text-white space-x-3 hover:cursor-pointer transition duration-300 ${hoverClassName} ${selectedClassName}`}
+                      onClick={() => handlePlanetSelect(index)}
+                    >
+                      <span className="font-bold">{item.name}</span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
               </div>
             </div>
           )}

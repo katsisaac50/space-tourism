@@ -38,15 +38,15 @@ function Crew() {
               </p>
               <hr className="h-px my-8 border-1 dark:bg-gray-800"></hr>
               <div className="radio-button-group">
-              <ul className="flex space-x-4 pb-6">
+              <ol className="flex space-x-4 pb-6">
               {crewImages.map((item, index) => {
                 console.log(index);
                 const hoverClassName =
                   selectedPlanetIndex === index
-                    ? 'hover:text-yellow-300 hover:border-b-2 border-yellow-300'
-                    : 'hover:text-white hover:border-b-2';
+                    ? 'hover:text-blue-700'
+                    : 'hover:text-red-700 hover:border-b-2';
                 const selectedClassName =
-                  selectedPlanetIndex === index ? 'border-b-2 border-yellow-300' : '';
+                  selectedPlanetIndex === index ? 'border-b-2' : '';
   
                   
   
@@ -56,12 +56,12 @@ function Crew() {
                       className={`text-white space-x-3 hover:cursor-pointer transition duration-300 ${hoverClassName} ${selectedClassName}`}
                       onClick={() => handlePlanetSelect(index)}
                     >
-                      <span className="font-bold">{item.name}</span>
+                    <label for="carousel-3" className= {`carousel-bullet cursor-pointer block text-4xl text-white  ${hoverClassName} ${selectedClassName}`}>•</label>
                     </div>
                   </li>
                 );
               })}
-            </ul>
+            </ol>
               </div>
             </div>
           )}

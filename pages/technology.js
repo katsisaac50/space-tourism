@@ -1,72 +1,55 @@
+import { useState } from "react";
 import Image from "next/image";
 import technologyData from "../lib/data/technologyData.json";
 
 function Technology() {
-  const[selectedVehicleIndex, setSelectedVehicleIndex] = useState(0);
+  const [selectedVehicleIndex, setSelectedVehicleIndex] = useState(0);
+
   const handleVehicleSelect = (index) => {
     setSelectedVehicleIndex(index);
-  }
-  const selectedPlanetIndex = 0;
-  const projects = [
-    {
-      title: 'Project 1',
-      category: 'Category 1',
-      url: '/project1',
-      users: [
-        { name: 'User 1', avatar: 'user1.jpg' },
-        { name: 'User 2', avatar: 'user2.jpg' },
-      ],
-    },
-    // Add more projects as needed
-  ];
+  };
+
+  const selectedPlanetData = technologyData[selectedVehicleIndex];
 
   return (
     <div className="home-background">
       <div className="container mx-auto flex mt-64">
-      {
-        technologyData.map((data) => {
-          console.log(data);
-          return (
-            <li key={index}>
-            <div className="space-y-4 items-center ml-1 pl-0 mt-32" onClick={() => handleVehicleSelect(index)}>
-          <div className="w-16 h-16 rounded-full bg-white text-gray-700 text-4xl font-serif flex items-center justify-center">
-            1
-          </div>
-          <div className="w-16 h-16 rounded-full bg-white text-gray-700 text-4xl font-serif flex items-center justify-center">
-            2
-          </div>
-          <div className="w-16 h-16 rounded-full bg-white text-gray-700 text-4xl font-serif flex items-center justify-center">
-            3
-          </div>
-        </div>
-            </li>
-          );
-        })
-      }
-      
-        <section
-          className="ml-8 ext-justify text-white w-[26rem] h-[20rem] flex-shrink-0"
-        >
-          <h2 className="text-2xl uppercase font-mono tracking-[.02rem]">So, you want to travel to</h2>
-          <h1 className="pt-3.5 font-serif text-9xl font-bold uppercase">
-  Space
-</h1>
+        <ul>
+          {technologyData.map((data, index) => (
+            
+              <div key={index}
+                className="space-y-4 items-center ml-1 pl-0 mt-32"
+                onClick={() => handleVehicleSelect(index)}
+              >
+                <div className="w-16 h-16 rounded-full bg-white text-gray-700 text-4xl font-serif flex items-center justify-center">
+                  {index + 1}
+                </div>
+              </div>
+            
+          ))}
+        </ul>
+
+        <section className="ml-8 ext-justify text-white w-[26rem] h-[20rem] flex-shrink-0">
+          <h2 className="text-2xl uppercase font-mono tracking-[.02rem]">
+            So, you want to travel to
+          </h2>
+          <h1 className="pt-3.5 font-serif text-4xl font-bold uppercase">
+            {technologyData[selectedVehicleIndex].name}
+          </h1>
 
           <p className="text-base pt-12 font-mono">
-            Let’s face it; if you want to go to space, you might as well
-            genuinely go to outer space and not hover kind of on the edge of it.
-            Well, sit back, and relax because we’ll give you a truly out of
-            this world experience!
+            {technologyData[selectedVehicleIndex].details}
           </p>
         </section>
+
         <div className="ml-20">
-            <Image
-              src={technologyData[selectedPlanetIndex].image}
-              width={500}
-              height={500}
-              alt="Picture of the author"
-            />
-          </div>
+          <Image
+            src={selectedPlanetData.image}
+            width={500}
+            height={500}
+            alt="Picture of the author"
+          />
+        </div>
       </div>
     </div>
   );

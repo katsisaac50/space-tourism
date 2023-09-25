@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function Technology() {
   const projects = [
     {
@@ -41,7 +43,14 @@ function Technology() {
             this world experience!
           </p>
         </section>
-        
+        <div className="ml-20">
+            <Image
+              src={crewImages[selectedPlanetIndex].image}
+              width={500}
+              height={500}
+              alt="Picture of the author"
+            />
+          </div>
       </div>
     </div>
   );

@@ -29,8 +29,8 @@ function Crew() {
           
           {selectedPlanetIndex !== null && (
             <div>
-            <h3 className="pt-3.5 font-serif text-3xl font-bold uppercase">{crewImages[selectedPlanetIndex].expertise}</h3>
-              <span className="text-6xl font-serif"> 
+            <h3 className="pt-3.5 text-gray-600 font-serif text-3xl font-bold uppercase">{crewImages[selectedPlanetIndex].expertise}</h3>
+              <span className="text-6xl pt-36 font-serif"> 
                 {crewImages[selectedPlanetIndex].name}
               </span>
               <p className="pt-6 font-mono">
@@ -46,17 +46,17 @@ function Crew() {
                     ? 'hover:text-green-700'
                     : 'hover:text-red-700';
                 const selectedClassName =
-                  selectedPlanetIndex === index ? 'text-blue-700' : '';
+                  selectedPlanetIndex === index ? 'text-white' : '';
   
                   
   
                 return (
                   <li key={index}>
                     <div
-                      className={`text-white space-x-3 hover:cursor-pointer transition duration-300 ${hoverClassName} ${selectedClassName}`}
+                      className={`text-gray-600 space-x-3 hover:cursor-pointer transition duration-300 ${hoverClassName} ${selectedClassName}`}
                       onClick={() => handlePlanetSelect(index)}
                     >
-                    <label className= {`carousel-bullet cursor-pointer block text-white text-6xl ${hoverClassName} ${selectedClassName}`}>•</label>
+                    <label className= {`carousel-bullet cursor-pointer block text-6xl`}>•</label>
                     </div>
                   </li>
                 );

@@ -22,7 +22,7 @@ function RootLayout({ children }) {
           alt="Picture of the author"
         />
       </div>
-      <div className="w-full relative">
+      <div className="w-full">
         <div className="absolute inset-0 z-10">
           <HorizontalLine />
         </div>

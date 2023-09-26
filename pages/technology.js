@@ -1,3 +1,5 @@
+
+
 import { useState } from "react";
 import Image from "next/image";
 import technologyData from "../lib/data/technologyData.json";
@@ -12,37 +14,34 @@ function Technology() {
   const selectedPlanetData = technologyData[selectedVehicleIndex];
 
   return (
-    <div className="home-background">
-      <div className="container mx-auto flex mt-64">
-        <ul>
+    <div class="grid grid-rows-3 grid-flow-col gap-4 home-background text-white">
+  <div class="flex col-start-1 col-end-1 ...">
+  <ul className="space-y-6 mt-36 ml-10">
           {technologyData.map((data, index) => (
             
-              <div key={index}
-                className="space-y-4 items-center ml-1 pl-0 mt-32"
-                onClick={() => handleVehicleSelect(index)}
-              >
-                <div className="w-16 h-16 rounded-full bg-white text-gray-700 text-4xl font-serif flex items-center justify-center">
+              
+                <div key={index} onClick={() => handleVehicleSelect(index)} className="w-16 h-16 rounded-full bg-white text-gray-700 text-4xl font-serif flex items-center justify-center">
                   {index + 1}
                 </div>
-              </div>
+              
             
           ))}
         </ul>
-
-        <section className="ml-8 ext-justify text-white w-[26rem] h-[20rem] flex-shrink-0">
-          <h2 className="text-2xl uppercase font-mono tracking-[.02rem]">
-            So, you want to travel to
+      <div className="ml-20 mt-36" >
+          <h2 className="text-xl uppercase font-mono tracking-[.02rem]uppercase">
+          The terminology...
           </h2>
-          <h1 className="pt-3.5 font-serif text-4xl font-bold uppercase">
+          <h1 className="pt-3.5 font-serif text-5xl font-bold uppercase">
             {technologyData[selectedVehicleIndex].name}
           </h1>
 
-          <p className="text-base pt-12 font-mono">
+          <p className="text-base pt-10 font-mono">
             {technologyData[selectedVehicleIndex].details}
           </p>
-        </section>
-
-        <div className="ml-20">
+      </div>
+  </div>
+  <div class="col-span-2 ...">
+  <div className="">
           <Image
             src={selectedPlanetData.image}
             width={500}
@@ -50,8 +49,14 @@ function Technology() {
             alt="Picture of the author"
           />
         </div>
-      </div>
-    </div>
+  </div>
+  <div class="row-span-2 col-span-1 ...">
+  <p className="uppercase font-serif text-2xl tracking-widest">
+            <span className="font-bold font-mono text-gray-600">03 </span>
+            Space launch 101
+          </p>
+  </div>
+</div>
   );
 }
 

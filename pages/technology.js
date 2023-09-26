@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import Image from "next/image";
 import technologyData from "../lib/data/technologyData.json";
@@ -14,9 +12,10 @@ function Technology() {
   const selectedPlanetData = technologyData[selectedVehicleIndex];
 
   return (
-    <div class="grid grid-rows-3 grid-flow-col gap-4 home-background text-white">
-  <div class="flex col-start-1 col-end-1 ...">
-  <ul className="space-y-6 mt-36 ml-10">
+    <div className="home-background">
+      <div className="container mx-auto flex mt-64">
+      
+        <ul className="space-y-6 mt-36">
           {technologyData.map((data, index) => (
             
               
@@ -27,7 +26,12 @@ function Technology() {
             
           ))}
         </ul>
-      <div className="ml-20 mt-36" >
+        
+        <section className="ml-16  text-white w-[34rem] h-[50rem]" >
+        <p className="uppercase font-serif text-2xl tracking-widest">
+            <span className="font-bold font-mono text-gray-600">03 </span>
+            Space launch 101
+          </p>
           <h2 className="text-xl uppercase font-mono tracking-[.02rem]uppercase">
           The terminology...
           </h2>
@@ -38,10 +42,9 @@ function Technology() {
           <p className="text-base pt-10 font-mono">
             {technologyData[selectedVehicleIndex].details}
           </p>
-      </div>
-  </div>
-  <div class="col-span-2 ...">
-  <div className="">
+        </section>
+
+        <div className="ml-40">
           <Image
             src={selectedPlanetData.image}
             width={500}
@@ -49,14 +52,8 @@ function Technology() {
             alt="Picture of the author"
           />
         </div>
-  </div>
-  <div class="row-span-2 col-span-1 ...">
-  <p className="uppercase font-serif text-2xl tracking-widest">
-            <span className="font-bold font-mono text-gray-600">03 </span>
-            Space launch 101
-          </p>
-  </div>
-</div>
+      </div>
+    </div>
   );
 }
 
